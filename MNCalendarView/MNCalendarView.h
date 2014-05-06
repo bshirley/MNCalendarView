@@ -46,3 +46,8 @@
 - (void)calendarView:(MNCalendarView *)calendarView didSelectDate:(NSDate *)date;
 
 @end
+
+
+@interface MNCalendarView (SubclassingHooks)
+- (void)commonInit;
+@end

@@ -9,6 +9,8 @@
 #import "VCMasterViewController.h"
 #import "VCDetailViewController.h"
 #import "VCAppDelegate.h"
+#import "NSDate+MNAdditions.h"
+#import "VCCalendarView.h"
 
 @interface VCMasterViewController ()
 @end
@@ -50,10 +52,21 @@
 }
 
 - (void)toggleCalendar:(id)sender {
+    // show calendar
+    VCAppDelegate *appDelegate = [VCAppDelegate appDelegate];
+    NSMutableArray *dates = [NSMutableArray array];
+    [appDelegate.items enumerateObjectsUsingBlock:^(NSDictionary *item, NSUInteger idx, BOOL *stop) {
+        NSDate *dateForItem = item[@"date"];
+        NSDate *normalizedDate = [dateForItem mn_beginningOfDay:[NSCalendar currentCalendar]];
+        if ([dates indexOfObject:normalizedDate] == NSNotFound) {
+            [dates addObject:normalizedDate];
+        }
+    }];
     
+    [VCCalendarView newCalendarViewDisplayedOver:self forDates:dates];
 }
 
-#pragma mark - Table View
+#pragma mark - UITableViewDelegate UITableViewDataSource
 
 - (NSDictionary *)itemAtIndexPath:(NSIndexPath *)indexPath {
     VCAppDelegate *appDelegate = [VCAppDelegate appDelegate];

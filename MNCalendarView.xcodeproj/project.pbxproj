@@ -26,6 +26,8 @@
 		39A860EA17A32E79003F6F4A /* MNCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A860E917A32E79003F6F4A /* MNCalendarHeaderView.m */; };
 		39FCA69017A5CE0D0064F303 /* MNCalendarViewWeekdayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FCA68F17A5CE0D0064F303 /* MNCalendarViewWeekdayCell.m */; };
 		39FCA69617A5D0F70064F303 /* MNCalendarViewDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FCA69517A5D0F70064F303 /* MNCalendarViewDayCell.m */; };
+		9D08A04119188BF70045E67A /* VCCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D08A04019188BF70045E67A /* VCCalendarView.m */; };
+		9D08A0421918919C0045E67A /* libMNCalendarView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39075410179F6DC5002AC1EC /* libMNCalendarView.a */; };
 		9D207CE2191052130082D3B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39075413179F6DC5002AC1EC /* Foundation.framework */; };
 		9D207CE4191052130082D3B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D207CE3191052130082D3B3 /* CoreGraphics.framework */; };
 		9D207CE5191052130082D3B3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39075424179F6DC5002AC1EC /* UIKit.framework */; };
@@ -91,6 +93,9 @@
 		39FCA68F17A5CE0D0064F303 /* MNCalendarViewWeekdayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNCalendarViewWeekdayCell.m; sourceTree = "<group>"; };
 		39FCA69417A5D0F70064F303 /* MNCalendarViewDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNCalendarViewDayCell.h; sourceTree = "<group>"; };
 		39FCA69517A5D0F70064F303 /* MNCalendarViewDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNCalendarViewDayCell.m; sourceTree = "<group>"; };
+		9D08A03F19188BF70045E67A /* VCCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = VCCalendarView.h; sourceTree = "<group>"; tabWidth = 2; };
+		9D08A04019188BF70045E67A /* VCCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = VCCalendarView.m; sourceTree = "<group>"; tabWidth = 2; };
+		9D08A04319189BCB0045E67A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		9D207CE1191052130082D3B3 /* VCCalendarViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VCCalendarViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D207CE3191052130082D3B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9D207CE8191052130082D3B3 /* VCCalendarViewExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VCCalendarViewExample-Info.plist"; sourceTree = "<group>"; };
@@ -101,7 +106,7 @@
 		9D207CF0191052130082D3B3 /* VCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCAppDelegate.m; sourceTree = "<group>"; };
 		9D207CF3191052130082D3B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9D207CF5191052130082D3B3 /* VCMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCMasterViewController.h; sourceTree = "<group>"; };
-		9D207CF6191052130082D3B3 /* VCMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCMasterViewController.m; sourceTree = "<group>"; };
+		9D207CF6191052130082D3B3 /* VCMasterViewController.m */ = {isa = PBXFileReference; indentWidth = 4; lastKnownFileType = sourcecode.c.objc; path = VCMasterViewController.m; sourceTree = "<group>"; tabWidth = 4; };
 		9D207CF8191052130082D3B3 /* VCDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCDetailViewController.h; sourceTree = "<group>"; };
 		9D207CF9191052130082D3B3 /* VCDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCDetailViewController.m; sourceTree = "<group>"; };
 		9D207CFB191052130082D3B3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -132,6 +137,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D08A0421918919C0045E67A /* libMNCalendarView.a in Frameworks */,
 				9D207CE4191052130082D3B3 /* CoreGraphics.framework in Frameworks */,
 				9D207CE5191052130082D3B3 /* UIKit.framework in Frameworks */,
 				9D207CE2191052130082D3B3 /* Foundation.framework in Frameworks */,
@@ -144,6 +150,7 @@
 		39075407179F6DC4002AC1EC = {
 			isa = PBXGroup;
 			children = (
+				9D08A04319189BCB0045E67A /* README.md */,
 				39075415179F6DC5002AC1EC /* MNCalendarView */,
 				3907542A179F6DC5002AC1EC /* MNCalendarViewTests */,
 				9D207CE6191052130082D3B3 /* VCCalendarViewExample */,
@@ -231,6 +238,8 @@
 				9D207CEF191052130082D3B3 /* VCAppDelegate.h */,
 				9D207CF0191052130082D3B3 /* VCAppDelegate.m */,
 				9D207CF2191052130082D3B3 /* Main.storyboard */,
+				9D08A03F19188BF70045E67A /* VCCalendarView.h */,
+				9D08A04019188BF70045E67A /* VCCalendarView.m */,
 				9D207CF5191052130082D3B3 /* VCMasterViewController.h */,
 				9D207CF6191052130082D3B3 /* VCMasterViewController.m */,
 				9D207CF8191052130082D3B3 /* VCDetailViewController.h */,
@@ -406,6 +415,7 @@
 				9D207CED191052130082D3B3 /* main.m in Sources */,
 				9D207CFA191052130082D3B3 /* VCDetailViewController.m in Sources */,
 				9D207CF1191052130082D3B3 /* VCAppDelegate.m in Sources */,
+				9D08A04119188BF70045E67A /* VCCalendarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +483,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -495,6 +506,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -652,6 +664,7 @@
 				9D207D11191052130082D3B3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
