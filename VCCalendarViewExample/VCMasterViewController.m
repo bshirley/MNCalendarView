@@ -47,8 +47,7 @@
 {
     VCAppDelegate *appDelegate = [VCAppDelegate appDelegate];
     [appDelegate addRandomData];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.tableView reloadData];
 }
 
 - (void)toggleCalendar:(id)sender {
@@ -152,9 +151,17 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         VCAppDelegate *appDelegate = [VCAppDelegate appDelegate];
         NSDictionary *item = [self itemAtIndexPath:indexPath];
+        NSDate *date = item[@"date"];
         [appDelegate deleteItem:item];
-// TBD: test for deletion of single item in section
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        NSArray *remainingItemsForDate = [appDelegate itemsInDay:date];
+        if (remainingItemsForDate.count > 0) {
+            [tableView deleteRowsAtIndexPaths:@[indexPath]
+                             withRowAnimation:UITableViewRowAnimationFade];
+        } else {
+            [tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section]
+                     withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }

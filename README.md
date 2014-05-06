@@ -50,13 +50,13 @@ cv.delegate = self;
 # TO DO
 
 0. [x] Order calendar backward
-1. [ ] Display Calendar when table heading is cicked
+1. [ ] Display Calendar when table heading is cicked, with selected date
 2. [x] restrict calendar to used dates
 3. [x] disable unused dates
 4. [ ] provide multi-day/week selection
 5. [ ] select properly in example
-6. [ ] filter properly in example
-7. [ ] present info on what is currently being filtered
-8. [ ] provide "clear filter"
+6. [-] filter properly in example
+7. [-] present info on what is currently being filtered
+8. [-] provide "clear filter"
 9. [x] don't display pad dates from other months
 10.[ ] don't display dates after today

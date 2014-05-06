@@ -56,13 +56,24 @@
     return values;
 }
 
-- (void)addRandomData {
+- (NSArray *)addRandomData {
+    NSMutableArray *items = [NSMutableArray array];
+    NSDictionary *item;
+    
     for (int i = 0; i < 1; i++) {
-        [self.items addObject:[self randomItemWithinDays:3]];
+        item = [self randomItemWithinDays:3];
+        [items addObject:item];
+        [self.items addObject:item];
+    }
+    for (int i = 0; i < 1; i++) {
+        item = [self randomItemWithinDays:60];
+        [items addObject:item];
+        [self.items addObject:item];
     }
 
     [self sortItems];
     [self persistList];
+    return items;
 }
 
 - (void)loadItems {

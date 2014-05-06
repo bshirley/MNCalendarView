@@ -23,7 +23,7 @@
  */
 @property (strong, nonatomic) NSMutableArray *items;
 
-- (void)addRandomData;
+- (NSArray *)addRandomData;
 
 /// derivative data:
 @property (readonly, nonatomic) NSInteger numberOfDays; // different days in items
