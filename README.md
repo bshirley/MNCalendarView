@@ -27,3 +27,14 @@ calendarView.delegate = self;
 
     - (void)calendarView:(VCCalendarView *)calendarView selectDates:(NSArray *)dates;
     - (void)calendarView:(VCCalendarView *)calendarView filterOnDates:(NSArray *)dates;
+
+
+
+
+# TO DO
+
+0. Order now backward
+1. Display Calendar when table heading is cicked
+2. restrict calendar to used dates
+3. disable/cross through unused dates
+4. provide multi-day/week selection
