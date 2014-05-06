@@ -48,4 +48,6 @@ cv.delegate = self;
 4. [ ] provide multi-day/week selection
 5. [ ] select properly in example
 6. [ ] filter properly in example
+7. [ ] present info on what is currently being filtered
+8. [ ] provide "clear filter"
 
