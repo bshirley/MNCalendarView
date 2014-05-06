@@ -19,7 +19,6 @@
 @property(nonatomic,strong,readwrite) UICollectionView *collectionView;
 @property(nonatomic,strong,readwrite) UICollectionViewFlowLayout *layout;
 
-@property(nonatomic,strong,readwrite) NSArray *monthDates;
 @property(nonatomic,strong,readwrite) NSArray *weekdaySymbols;
 @property(nonatomic,assign,readwrite) NSUInteger daysInWeek;
 

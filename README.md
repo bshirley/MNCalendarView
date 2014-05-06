@@ -16,6 +16,14 @@ calendarView.delegate = self;
 <img src="https://github.com/min/MNCalendarView/raw/master/Documentation/Default@2x.png" alt="Calendar" width="320px"/>
 
 
+## VC Usage
+    See VCMasterViewController.m and VCCalendarView.h
+
+```objective-c
+VCCalendarView *cv = [VCCalendarView newCalendarViewDisplayedOver:self forDates:dates];
+cv.delegate = self;
+```
+
 ## Callbacks
 
 ### MN Native
@@ -33,8 +41,11 @@ calendarView.delegate = self;
 
 # TO DO
 
-0. Order now backward
-1. Display Calendar when table heading is cicked
-2. restrict calendar to used dates
-3. disable/cross through unused dates
-4. provide multi-day/week selection
+0. [x] Order calendar backward
+1. [ ] Display Calendar when table heading is cicked
+2. [x] restrict calendar to used dates
+3. [ ] disable/cross through unused dates
+4. [ ] provide multi-day/week selection
+5. [ ] select properly in example
+6. [ ] filter properly in example
+

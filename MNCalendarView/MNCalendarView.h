@@ -33,6 +33,7 @@
 @property(nonatomic,strong) Class weekdayCellClass;
 @property(nonatomic,strong) Class dayCellClass;
 
+@property(nonatomic,strong,readwrite) NSArray *monthDates;
 - (void)reloadData;
 - (void)registerUICollectionViewClasses; 
 

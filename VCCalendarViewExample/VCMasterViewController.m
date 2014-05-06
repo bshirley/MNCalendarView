@@ -12,7 +12,7 @@
 #import "NSDate+MNAdditions.h"
 #import "VCCalendarView.h"
 
-@interface VCMasterViewController ()
+@interface VCMasterViewController () <VCCalendarViewDelegate>
 @end
 
 @implementation VCMasterViewController
@@ -63,7 +63,8 @@
         }
     }];
     
-    [VCCalendarView newCalendarViewDisplayedOver:self forDates:dates];
+    VCCalendarView *cv = [VCCalendarView newCalendarViewDisplayedOver:self forDates:dates];
+    cv.delegate = self;
 }
 
 #pragma mark - UITableViewDelegate UITableViewDataSource

@@ -15,9 +15,28 @@
 
 @implementation VCCalendarView
 
+- (void)restrictToDates:(NSArray *)dates {
+  __block NSDate *newestDate = [NSDate distantPast];
+  __block NSDate *oldestDate = [NSDate distantFuture];
+  
+  [dates enumerateObjectsUsingBlock:^(NSDate *obj, NSUInteger idx, BOOL *stop) {
+    if ([obj compare:newestDate] == NSOrderedDescending) {
+      newestDate = obj;
+    }
+    if ([obj compare:oldestDate] == NSOrderedAscending) {
+      oldestDate = obj;
+    }
+  }];
+  
+  self.fromDate = oldestDate;
+  self.toDate = newestDate;
+  [self reloadData];
+}
+
 + (instancetype)newCalendarViewDisplayedOver:(UIViewController *)parentViewController forDates:(NSArray *)dates {
   CGRect frame = parentViewController.view.frame;
   VCCalendarView *instance = [[self alloc] initWithFrame:frame];
+  [instance restrictToDates:dates];
   instance.dates = dates;
   UIViewController *vc = [[UIViewController alloc] init];
   vc.view = instance;
@@ -37,6 +56,7 @@
                                              ];
   
   UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+  nvc.navigationBar.translucent = YES;
   
   [parentViewController presentViewController:nvc
                                      animated:YES
@@ -48,8 +68,19 @@
   return instance;
 }
 
+#pragma mark - superclass overrides
+
 - (void)commonInit {
   [super commonInit];
+}
+
+- (void)reloadData {
+  [super reloadData];
+
+  NSEnumerator *e = self.monthDates.reverseObjectEnumerator;
+  self.monthDates = [e allObjects];
+  
+  [self.collectionView reloadData];
 }
 
 
