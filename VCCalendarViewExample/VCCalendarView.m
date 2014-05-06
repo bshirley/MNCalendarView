@@ -7,6 +7,7 @@
 //
 
 #import "VCCalendarView.h"
+#import "MNCalendarViewDayCell.h"
 
 @interface VCCalendarView ()
 @property (strong, nonatomic) NSArray *dates;
@@ -30,6 +31,7 @@
   
   self.fromDate = oldestDate;
   self.toDate = newestDate;
+  self.dates = dates;
   [self reloadData];
 }
 
@@ -37,7 +39,7 @@
   CGRect frame = parentViewController.view.frame;
   VCCalendarView *instance = [[self alloc] initWithFrame:frame];
   [instance restrictToDates:dates];
-  instance.dates = dates;
+
   UIViewController *vc = [[UIViewController alloc] init];
   vc.view = instance;
   vc.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"dismiss"
@@ -49,10 +51,10 @@
                                                                               style:UIBarButtonItemStylePlain
                                                                              target:instance
                                                                              action:@selector(selectDates:)],
-                                             [[UIBarButtonItem alloc] initWithTitle:@"filter"
-                                                                              style:UIBarButtonItemStylePlain
-                                                                             target:instance
-                                                                             action:@selector(filterDates:)],
+//                                             [[UIBarButtonItem alloc] initWithTitle:@"filter"
+//                                                                              style:UIBarButtonItemStylePlain
+//                                                                             target:instance
+//                                                                             action:@selector(filterDates:)],
                                              ];
   
   UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
@@ -83,6 +85,34 @@
   [self.collectionView reloadData];
 }
 
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+  MNCalendarViewDayCell *cell = (MNCalendarViewDayCell *)[super collectionView:collectionView
+                                                        cellForItemAtIndexPath:indexPath];
+  
+  if ([cell isKindOfClass:[MNCalendarViewDayCell class]]) {
+    
+    NSDateComponents *components =
+    [self.calendar components:NSMonthCalendarUnit|NSDayCalendarUnit|NSWeekdayCalendarUnit
+                     fromDate:cell.date];
+    
+    NSDateComponents *monthComponents =
+    [self.calendar components:NSMonthCalendarUnit
+                     fromDate:cell.month];
+
+    if (monthComponents.month != components.month) {
+      // pad dates from other months are not labeled
+      cell.titleLabel.text = @"";
+    }
+    
+    if ([self.dates containsObject:cell.date] == NO) {
+      // disable unused dates
+      cell.enabled = NO;
+    }
+  }
+  
+  return cell;
+}
 
 #pragma mark - targets from nav bar
 

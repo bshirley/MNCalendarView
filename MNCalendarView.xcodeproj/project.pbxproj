@@ -26,7 +26,6 @@
 		39A860EA17A32E79003F6F4A /* MNCalendarHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39A860E917A32E79003F6F4A /* MNCalendarHeaderView.m */; };
 		39FCA69017A5CE0D0064F303 /* MNCalendarViewWeekdayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FCA68F17A5CE0D0064F303 /* MNCalendarViewWeekdayCell.m */; };
 		39FCA69617A5D0F70064F303 /* MNCalendarViewDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FCA69517A5D0F70064F303 /* MNCalendarViewDayCell.m */; };
-		9D08A04119188BF70045E67A /* VCCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D08A04019188BF70045E67A /* VCCalendarView.m */; };
 		9D08A0421918919C0045E67A /* libMNCalendarView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39075410179F6DC5002AC1EC /* libMNCalendarView.a */; };
 		9D207CE2191052130082D3B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39075413179F6DC5002AC1EC /* Foundation.framework */; };
 		9D207CE4191052130082D3B3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D207CE3191052130082D3B3 /* CoreGraphics.framework */; };
@@ -38,6 +37,7 @@
 		9D207CF7191052130082D3B3 /* VCMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D207CF6191052130082D3B3 /* VCMasterViewController.m */; };
 		9D207CFA191052130082D3B3 /* VCDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D207CF9191052130082D3B3 /* VCDetailViewController.m */; };
 		9D207CFC191052130082D3B3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D207CFB191052130082D3B3 /* Images.xcassets */; };
+		9D7F75A0191937660042A138 /* VCCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D08A04019188BF70045E67A /* VCCalendarView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,8 +93,8 @@
 		39FCA68F17A5CE0D0064F303 /* MNCalendarViewWeekdayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNCalendarViewWeekdayCell.m; sourceTree = "<group>"; };
 		39FCA69417A5D0F70064F303 /* MNCalendarViewDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MNCalendarViewDayCell.h; sourceTree = "<group>"; };
 		39FCA69517A5D0F70064F303 /* MNCalendarViewDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MNCalendarViewDayCell.m; sourceTree = "<group>"; };
-		9D08A03F19188BF70045E67A /* VCCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; path = VCCalendarView.h; sourceTree = "<group>"; tabWidth = 2; };
-		9D08A04019188BF70045E67A /* VCCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; path = VCCalendarView.m; sourceTree = "<group>"; tabWidth = 2; };
+		9D08A03F19188BF70045E67A /* VCCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.h; name = VCCalendarView.h; path = ../VCCalendarViewExample/VCCalendarView.h; sourceTree = "<group>"; tabWidth = 2; };
+		9D08A04019188BF70045E67A /* VCCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.c.objc; name = VCCalendarView.m; path = ../VCCalendarViewExample/VCCalendarView.m; sourceTree = "<group>"; tabWidth = 2; };
 		9D08A04319189BCB0045E67A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		9D207CE1191052130082D3B3 /* VCCalendarViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VCCalendarViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D207CE3191052130082D3B3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -184,6 +184,8 @@
 		39075415179F6DC5002AC1EC /* MNCalendarView */ = {
 			isa = PBXGroup;
 			children = (
+				9D08A03F19188BF70045E67A /* VCCalendarView.h */,
+				9D08A04019188BF70045E67A /* VCCalendarView.m */,
 				39A860E817A32E79003F6F4A /* MNCalendarHeaderView.h */,
 				39A860E917A32E79003F6F4A /* MNCalendarHeaderView.m */,
 				39075418179F6DC5002AC1EC /* MNCalendarView.h */,
@@ -238,8 +240,6 @@
 				9D207CEF191052130082D3B3 /* VCAppDelegate.h */,
 				9D207CF0191052130082D3B3 /* VCAppDelegate.m */,
 				9D207CF2191052130082D3B3 /* Main.storyboard */,
-				9D08A03F19188BF70045E67A /* VCCalendarView.h */,
-				9D08A04019188BF70045E67A /* VCCalendarView.m */,
 				9D207CF5191052130082D3B3 /* VCMasterViewController.h */,
 				9D207CF6191052130082D3B3 /* VCMasterViewController.m */,
 				9D207CF8191052130082D3B3 /* VCDetailViewController.h */,
@@ -392,6 +392,7 @@
 				39A860E317A31FAB003F6F4A /* MNFastDateEnumeration.m in Sources */,
 				39FCA69017A5CE0D0064F303 /* MNCalendarViewWeekdayCell.m in Sources */,
 				394051D117A350850099F12A /* MNCalendarViewLayout.m in Sources */,
+				9D7F75A0191937660042A138 /* VCCalendarView.m in Sources */,
 				3907541B179F6DC5002AC1EC /* MNCalendarView.m in Sources */,
 				39A860DD17A30210003F6F4A /* MNCalendarViewCell.m in Sources */,
 				39A860DA17A2F234003F6F4A /* NSDate+MNAdditions.m in Sources */,
@@ -415,7 +416,6 @@
 				9D207CED191052130082D3B3 /* main.m in Sources */,
 				9D207CFA191052130082D3B3 /* VCDetailViewController.m in Sources */,
 				9D207CF1191052130082D3B3 /* VCAppDelegate.m in Sources */,
-				9D08A04119188BF70045E67A /* VCCalendarView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

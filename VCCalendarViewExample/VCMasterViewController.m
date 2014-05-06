@@ -65,7 +65,30 @@
     
     VCCalendarView *cv = [VCCalendarView newCalendarViewDisplayedOver:self forDates:dates];
     cv.delegate = self;
+    cv.selectedDate = [NSDate date];
 }
+
+#pragma mark - CVCalendarViewDelegate
+
+- (BOOL)calendarView:(MNCalendarView *)calendarView shouldSelectDate:(NSDate *)date {
+    return YES;
+}
+
+- (void)calendarView:(MNCalendarView *)calendarView didSelectDate:(NSDate *)date {
+    NSLog(@"%s %@", __PRETTY_FUNCTION__, [NSDateFormatter localizedStringFromDate:date
+                                                                        dateStyle:NSDateFormatterMediumStyle
+                                                                        timeStyle:NSDateFormatterNoStyle]);
+}
+
+- (void)calendarView:(VCCalendarView *)calendarView selectDates:(NSArray *)dates {
+    NSLog(@"%s %@", __PRETTY_FUNCTION__, dates);
+}
+
+- (void)calendarView:(VCCalendarView *)calendarView filterOnDates:(NSArray *)dates {
+    NSLog(@"%s %@", __PRETTY_FUNCTION__, dates);
+}
+
+
 
 #pragma mark - UITableViewDelegate UITableViewDataSource
 
