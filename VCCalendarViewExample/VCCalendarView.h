@@ -21,6 +21,5 @@
 @optional
 
 - (void)calendarView:(VCCalendarView *)calendarView selectDates:(NSArray *)dates;
-- (void)calendarView:(VCCalendarView *)calendarView filterOnDates:(NSArray *)dates;
 
 @end

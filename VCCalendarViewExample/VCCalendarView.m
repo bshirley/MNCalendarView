@@ -51,10 +51,6 @@
                                                                               style:UIBarButtonItemStylePlain
                                                                              target:instance
                                                                              action:@selector(selectDates:)],
-//                                             [[UIBarButtonItem alloc] initWithTitle:@"filter"
-//                                                                              style:UIBarButtonItemStylePlain
-//                                                                             target:instance
-//                                                                             action:@selector(filterDates:)],
                                              ];
   
   UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
@@ -123,22 +119,13 @@
 }
 
 - (void)selectDates:(id)sender {
-  if ([self.delegate.class instancesRespondToSelector:@selector(calendarView:selectDates:)]) {
-    NSArray *dates = @[self.selectedDate];
-    [(id<VCCalendarViewDelegate>)self.delegate calendarView:self selectDates:dates];
-  }
-  
-  [self dismissCalendar:sender];
+  [self.controller dismissViewControllerAnimated:YES completion:^{
+    if ([self.delegate respondsToSelector:@selector(calendarView:selectDates:)]) {
+      NSArray *dates = @[self.selectedDate];
+      [(id<VCCalendarViewDelegate>)self.delegate calendarView:self selectDates:dates];
+    }
+  }];
 }
 
-- (void)filterDates:(id)sender {
-  if ([self.delegate.class instancesRespondToSelector:@selector(calendarView:filterOnDates:)]) {
-    NSArray *dates = @[self.selectedDate];
-    [(id<VCCalendarViewDelegate>)self.delegate calendarView:self filterOnDates:dates];
-  }
-  
-  [self dismissCalendar:sender];
-  
-}
 
 @end

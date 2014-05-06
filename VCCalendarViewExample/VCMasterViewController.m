@@ -81,10 +81,13 @@
 
 - (void)calendarView:(VCCalendarView *)calendarView selectDates:(NSArray *)dates {
     NSLog(@"%s %@", __PRETTY_FUNCTION__, dates);
-}
-
-- (void)calendarView:(VCCalendarView *)calendarView filterOnDates:(NSArray *)dates {
-    NSLog(@"%s %@", __PRETTY_FUNCTION__, dates);
+    VCAppDelegate *appDelegate = [VCAppDelegate appDelegate];
+    NSArray *alldates = [appDelegate listOfDays];
+    NSDate *normalizedDate = [dates[0] mn_beginningOfDay:[NSCalendar currentCalendar]];
+    NSInteger index = [alldates indexOfObject:normalizedDate];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:index];
+    [self.tableView scrollToRowAtIndexPath:indexPath
+                          atScrollPosition:UITableViewScrollPositionTop animated:YES];
 }
 
 

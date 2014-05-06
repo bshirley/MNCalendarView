@@ -7,7 +7,7 @@
 //
 
 #import "VCAppDelegate.h"
-
+#import "NSDate+MNAdditions.h"
 @implementation VCAppDelegate
 
 + (VCAppDelegate *)appDelegate {
@@ -123,6 +123,7 @@
 
 - (NSArray *)listOfDays {
     // no assumption of sort order
+    // dates are normalized to beginning of day
     NSMutableArray *components = [NSMutableArray arrayWithCapacity:self.items.count];
     
     for (NSDictionary *item in self.items) {
@@ -142,7 +143,7 @@
     NSCalendar *cal = [NSCalendar currentCalendar];
     __block NSMutableArray *dates = [NSMutableArray arrayWithCapacity:components.count];
     [components enumerateObjectsUsingBlock:^(NSDateComponents *dc, NSUInteger idx, BOOL *stop) {
-        NSDate *date = [cal dateFromComponents:dc];
+        NSDate *date = [[cal dateFromComponents:dc] mn_beginningOfDay:[NSCalendar currentCalendar]];
         [dates addObject:date];
     }];
     

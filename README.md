@@ -42,7 +42,6 @@ cv.delegate = self;
 ### VC Added
 
     - (void)calendarView:(VCCalendarView *)calendarView selectDates:(NSArray *)dates;
-    - (void)calendarView:(VCCalendarView *)calendarView filterOnDates:(NSArray *)dates;
 
 
 
@@ -54,7 +53,7 @@ cv.delegate = self;
 2. [x] restrict calendar to used dates
 3. [x] disable unused dates
 4. [ ] provide multi-day/week selection
-5. [ ] select properly in example
+5. [x] select properly in example
 6. [-] filter properly in example
 7. [-] present info on what is currently being filtered
 8. [-] provide "clear filter"
